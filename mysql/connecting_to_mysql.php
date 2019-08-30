@@ -7,7 +7,7 @@ require_once "login.php";
  */
 
 // Establishing a MySQL connection
-$connection = new mysqli($hostName, $username, $password, $database);
+$connection = new mysqli($hostName, $username, $password, $databaseName);
 if ($connection->connect_error) die ("Fatal error");
 
 // Querying a database

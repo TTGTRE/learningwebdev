@@ -5,6 +5,9 @@ require_once "login.php";
 /*
  *  Inserting and deleting (practical exercise)
  */
+$connection = new mysqli($hostName, $username, $password, $databaseName);
+if ($connection->connect_error) die("Error connecting to database.");
+
 if (isset($_POST["delete"]) && isset($_POST["isbn"])) {
     $isbn = get_post($connection, "isbn");
     $query = "DELETE FROM classics WHERE isbn='$isbn'";
