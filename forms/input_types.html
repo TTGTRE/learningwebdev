@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Types</title>
+    <form method="post" action="input_types.php">
+        <input type="text" name="input1" size="30" maxlength="50" value="Hello World!"><br>
+        <textarea name="input2" cols="50" rows="20" wrap="soft">Default text</textarea><br>
+        I Agree <input type="checkbox" name="input3" value="agree" checked="checked"><br>
+        Newsletter <input type="checkbox" name="input4" value="newsletter"><br>
+        What's your favorite ice cream?<br>
+        Vanilla <input type="checkbox" name="icecream[]" value="vanilla"><br>
+        Chocolate <input type="checkbox" name="icecream[]" value="chocolate"><br>
+        Strawberry <input type="checkbox" name="icecream[]" value="strawberry"><br>
+        What time would you like your package delivered?<br>
+        <label>Morning (8 - 11)<input type="radio" name="delivery" value="morning"></label><br>
+        <label>Afternoon (12 - 4)<input type="radio" name="delivery" value="afternoon" checked="checked"></label><br>
+        <label>Evening (5 - 9)<input type="radio" name="delivery" value="evening"></label><br>
+        Vegetables
+        <select name="vegetables" size="1">
+            <option value="Peas">Peas</option>
+            <option value="Beans">Beans</option>
+            <option value="Carrots">Carrots</option>
+            <option value="Cabbage">Cabbage</option>
+            <option value="Broccoli">Broccoli</option>
+        </select><br>
+        <select name="vegetables2" size="5" multiple="multiple">
+            <option value="Peas">Peas</option>
+            <option value="Beans">Beans</option>
+            <option value="Carrots">Carrots</option>
+            <option value="Cabbage">Cabbage</option>
+            <option value="Broccoli">Broccoli</option>
+        </select><br>
+        <input type="submit" value="Finish Selections">
+    </form>
+</head>
+<body>
+
+</body>
+</html>

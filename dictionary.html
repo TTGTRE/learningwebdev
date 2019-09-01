@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Dictionary</title>
+    <style>
+        dt {
+            font-weight: bold;
+            font-family: "Consolas", serif;
+        }
+    </style>
+</head>
+<body>
+    <dl>
+        <dt>$connection->real_escape_string($variable)</dt>
+        <dd>Takes into account the current character set of a MySQL connection
+            and must be used with a mysqli connection object.</dd>
+        <dt>get_magic_quotes_gpc()</dt>
+        <dd>Checks if the magic_quotes state for GPC (Get/Post/Cookie) operations is enabled. If it is enabled
+        when all quotes and NUL's are escaped with a backslash automatically</dd>
+        <dt>stripslashes($variable)</dt>
+        <dd>Strips a string of it's slashes. (used in conjunction with <code>get_magic_quotes_gpc()</code></dd>
+        <dt>htmlentities($variable)</dt>
+        <dd>Removes HTML from a string</dd>
+        <dt>strip_tags($variable)</dt>
+        <dd>Strips a string of any html tags. Should be used before <code>htmlentities()</code></dd>
+    </dl>
+</body>
+</html>
