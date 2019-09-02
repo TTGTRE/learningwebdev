@@ -1,0 +1,3 @@
+Set cookie: setcookie(name, value, expire (opt), path (opt), domain(opt), secure(opt), httponly(opt))
+Access cookie: if (isset($_COOKIE['location'])) $location = $_COOKIE['location'];
+Destroy cookie: setcookie('location', 'USA', time() - 2592000, '/');

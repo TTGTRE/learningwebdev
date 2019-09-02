@@ -1,0 +1,10 @@
+body {
+    font-family:  "Courier New", serif;
+}
+
+div {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: antiquewhite;
+}
