@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>With statement</title>
+</head>
+<body>
+    <script>
+        str = 'The quick brown fox jumps over the lazy dog.';
+        with (str) {
+            document.write('Length: ' + length + '<br>');
+            document.write('In upper-case: ' + toUpperCase() + '<br>');
+        }
+    </script>
+</body>
+</html>

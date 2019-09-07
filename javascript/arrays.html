@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+
+        // Two different ways to create arrays
+        var array = new Array();
+        array = [];
+
+
+        // Using push to add elements to an array
+        array.push('Hello');
+        document.write(array + "<br>");
+
+        // Creating an associative array
+        balls = {
+            "golf": "Golf balls, 6",
+            "tennis": "Tennis balls, 3",
+            "soccer": "Soccer ball, 1",
+            "ping": "Ping Pong balls, 1 doz"
+        }
+        for (ball in balls) {
+            document.write(ball + " = " + balls[ball] + "<br>");
+        }
+
+        // A multi-dimensional array
+        var multidimensional = [["Trippy", "Multidimensionality"], "Sortof"];
+        document.write(multidimensional[0][0] + ", " + multidimensional[0][1] + ", " + multidimensional[1] + "<br>");
+
+        // Using array methods...
+        // 'some'
+        function isBiggerThanTen(element, index, array) {
+            return element > 10;
+        }
+        result = [2, 5, 8, 1, 4].some(isBiggerThanTen);
+        document.write(result + "<br>");
+
+        result = [12, 5, 8, 1, 4].some(isBiggerThanTen);
+        document.write(result + "<br>");
+
+        // 'concat'
+        fruit = ["Banana", "Grape"];
+        veg = ["Carrot", "Cabbage"];
+        document.write(fruit.concat(veg) + "<br>");
+
+        // Example 2
+        pets = ["Cat", "Dog", "Fish"];
+        morePets = pets.concat("Rabbit", "Hamster");
+        document.write(morePets + "<br>");
+
+        // 'foreach'
+        pets.forEach(output);
+
+        function output(element, index, array) {
+            document.write("Element at index " + index + " has the value " + element + "<br>");
+        }
+
+
+    </script>
+</body>
+</html>

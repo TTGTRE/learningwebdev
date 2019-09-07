@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        function User(forename, username, password) {
+            this.forename = forename;
+            this.username = username;
+            this.password = password;
+            this.showUserOutside = showUserOutside; // Can assign global function to member function
+
+            this.showUser = function() {
+                document.write('Forename: ' + this.forename + '<br>');
+                document.write('Username: ' + this.username + '<br>');
+                document.write('Password: ' + this.password + '<br>');
+            }
+        }
+
+        function showUserOutside() {
+
+        }
+
+        var user = new User('Tre', 'escape9179', 'password123');
+        user.showUser();
+        user.showUserOutside();
+
+        // Creating empty object
+        user = new User();
+
+        // Adding property to object
+        user.greeting = 'Hello World<br>';
+        document.write(user.greeting);
+
+        // Declaring class using prototype keyword
+        // The prototype property of a function is used
+        // to mark an unchanging property or method to be
+        // passed by reference to other objects of the same type.
+        function UserTwo(forename, username, password) {
+            this.forename = forename;
+            this.username = username;
+            this.password = password;
+
+            UserTwo.prototype.showUser = function() {
+                document.write('Forename: ' + this.forename + '<br>');
+                document.write('Username: ' + this.username + '<br>');
+                document.write('Password: ' + this.password + '<br>');
+            }
+        }
+
+        var userTwo = new UserTwo('AnotherName', 'anotherUsername', 'anotherpassword');
+        userTwo.showUser();
+
+        // Defining a static function
+        UserTwo.prototype.haveFun = function() {
+            document.write('Party!!!<br>');
+        };
+        UserTwo.prototype.haveFun();
+
+        // Extending JavaScript objects
+        // Adding functionality to built-in String class
+        // to replace all spaces with the string 'orange' (using regex).
+        String.prototype.nbsp = function() {
+            return this.replace(/ /g, 'orange');
+        };
+        document.write("The quick brown fox".nbsp() + "<br>");
+
+        // Another prototype function to trim leading and trailing whitespace.
+        String.prototype.trim = function() {
+            return this.replace(/^\s+|\s+$/g, '');
+        };
+        document.write("  Please trim me.  ".trim() + "<br>");
+    </script>
+</body>
+</html>

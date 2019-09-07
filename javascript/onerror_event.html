@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onerror event</title>
+</head>
+<body>
+    <script>
+        onerror = errorHandler;
+        document.writ("Welcome to this website"); // Deliberate error
+
+        function errorHandler(message, url, line) {
+            out = 'Sorry, an error was encountered.\n\n';
+            out += 'Error: ' + message + '\n';
+            out += 'URL: ' + url + '\n';
+            out += 'Line: ' + line + '\n\n';
+            out += 'Click OK to continue.\n\n';
+            alert(out);
+            return true;
+        }
+    </script>
+</body>
+</html>

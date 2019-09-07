@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language</title>
+</head>
+<body>
+    <script>
+        // Variables with global scope
+        a = 20;
+        var b = 20;
+        if (a === b)
+            var c = 20;
+
+        document.write("Hello World");
+
+        // Arrays passed by reference
+        var referenceArray = ['Hello', 'World'];
+        referenceArrayFunc(referenceArray);
+
+        function referenceArrayFunc(referenceArray) {
+            referenceArray[0] = 'Goodbye';
+        }
+
+        document.write('Array modified by reference: ' + referenceArray);
+
+        // Function creating variables with global and local scope
+        function test() {
+            a = 123; // Global
+            var b = 456 // local
+            if (a == 123) var c = 789 // local
+        }
+
+        // Short-hand for getElementById()
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        // Passing varargs to function
+        function displayArguments() {
+            for(var i = 0; i < arguments.length; i++) {
+                document.write('Argument ' + i + ' is ' + arguments[i]);
+            }
+        }
+        displayArguments('Hello', 'How', 'Are', 'You');
+    </script>
+</body>
+</html>
