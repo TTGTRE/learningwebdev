@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XBrowser Async Function</title>
+</head>
+<body>
+    <script>
+        function asyncRequest() {
+            try { // Non-IE Browser?
+                // Yes
+                var request = new XMLHttpRequest();
+            } catch (e1) {
+                try { // IE 6+?
+                    // Yes
+                    request = new ActiveXObject("Msxml2.XMLHTTP")
+                } catch (e2) {
+                    try { // IE 5?
+                        // Yes
+                        request = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e3) { // There is no asynchronous support
+                        request = false;
+                    }
+                }
+            }
+            return request;
+        }
+
+        var request = asyncRequest();
+        // XMLHttpRequest object properties
+        request.onreadystatechange; // Specifies an event-handling function to be called whenever the readyState properties of an object changes
+        request.readyState; // An integer property that reports on the status of a request. It can have any of these values:
+        // 0 = Uninitialized, 1 = Loading, 2 = Loaded, 3 = Interactive, 4 = Completed.
+        request.responseText; // The data returned by the server is text format.
+        request.responseXML; // The data returned by the server in XML format.
+        request.status; // The HTTP status code returned by the server.
+        request.statusText; // The HTTP status text returned by the server.
+
+        // XMLHttpRequest object methods
+        request.abort(); // Aborts the current request.
+        request.getAllResponseHeaders(); // Returns all headers as a string.
+        request.getResponseHeader(param); // Returns the value of param as a string.
+        request.open('method', 'url', 'async'); // Specifies the HTTP method to use (GET or POST), the target URL, and whether
+        // the request should be handled asynchronously (true or false)
+        request.send(data); // Sends data to the target server using the specified HTTP method
+        request.setRequestHeader('param', 'value'); // Sets a header with a parameter/value pair
+    </script>
+</body>
+</html>
