@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessing CSS Properties From JavaScript</title>
+</head>
+<body>
+    <div id="object">Div Object</div>
+
+    <script src="OSC.js"></script>
+
+    <script>
+        S("object").border = "solid 1px red";
+        S("object").width = "100px";
+        S("object").height = "100px";
+        S("object").background = "#eee";
+        S("object").color = "blue";
+        S("object").fontSize = "15pt";
+        S("object").fontFamily = "Helvetica";
+        S("object").fontStyle = "italic";
+
+    </script>
+</body>
+</html>
