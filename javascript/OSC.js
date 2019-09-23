@@ -15,7 +15,7 @@ function O(id) {
  * @constructor
  */
 function S(id) {
-    return id.style;
+    return O(id).style;
 }
 
 /**

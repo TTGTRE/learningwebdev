@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeouts</title>
+    <script src="OSC.js"></script>
+</head>
+<body>
+<!--    <script>-->
+<!--        // setTimeout(timeoutHandler, 5000);-->
+<!--        var handle = setTimeout("alert('Timed out!');", 3000);-->
+
+<!--        timeoutHandler();-->
+
+<!--        /**-->
+<!--         * Repeating timeouts-->
+<!--         */-->
+<!--        let count = 0;-->
+<!--        function timeoutHandler() {-->
+
+<!--            if (count >= 5) {-->
+<!--                clearTimeout(handle);-->
+<!--            }-->
+
+<!--            alert("Timed out!");-->
+<!--            setTimeout(timeoutHandler, 3000);-->
+<!--            count++;-->
+<!--        }-->
+<!--    </script>-->
+
+    <!-- A clock created using interrupts -->
+    The time is : <span id="time">00:00:00</span><br>
+
+    <input type="button" id="stop-button" value="Stop clock">
+    <p id="info-text"></p>
+
+    <script>
+
+        resetInterval();
+        let intervalHandle;
+        let stopped = false;
+
+        let stopButton = O("stop-button");
+        let infoText = O("info-text");
+
+        stopButton.onselect = function() {
+            document.write("Button clicked<br>");
+            stopped = !stopped;
+            if (stopped == true) {
+                clearTimeout(intervalHandle);
+                this.value = "Start clock";
+            }
+            if (stopped == false) {
+                resetInterval();
+                this.value = "Stop clock";
+            }
+        };
+
+        function resetInterval() {
+            intervalHandle = setInterval("showTime(O('time'))", 1000);
+        }
+
+        function showTime(object) {
+            const date = new Date();
+            object.innerHTML = date.toTimeString().substr(0, 8);
+        }
+    </script>
+</body>
+</html>

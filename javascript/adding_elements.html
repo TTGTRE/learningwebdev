@@ -24,7 +24,19 @@
         alert("Click OK to remove the element");
         pnode = newdiv.parentNode;
         pnode.removeChild(newdiv);
-        tmp = pnode.offsetTop;
+        tmp = pnode.offsetTop; // Causes DOM refresh
+
+        // Alternatives for adding and removing elements
+        var element = S("object");
+        element.visibility = "hidden";
+        element.visibility = "visible";
+
+        // Collapse an element to occupy 0 width and 0 height
+        element.display = "none";
+        element.display = "block";
+
+        element = O("object");
+        element.innerHTML = "";
     </script>
 </body>
 </html>
