@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events: keypress</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h2>Press some keys</h2>
+    <div id="result"></div>
+    <script>
+        $(document).keypress(function(event) {
+            let key = String.fromCharCode(event.which);
+            if (key >= 'a' && key <= 'z' ||
+                key >= 'A' && key <= 'Z' ||
+                key >= '0' && key <= '9') {
+                $("#result").html("You pressed: " + key);
+                event.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>
