@@ -14,6 +14,7 @@
 <body>
     <canvas id="pad" width="480" height="320"></canvas>
     <script>
+
         let canvas = $("#pad")[0];
         let context = canvas.getContext("2d");
         let pendown = false;
@@ -26,7 +27,7 @@
             else context.moveTo(xpos, ypos);
 
             context.stroke();
-        })
+        });
 
         $("#pad").mousedown(function() { pendown = true; });
         $("#pad").mouseup(function() { pendown = false; });
